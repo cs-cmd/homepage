@@ -1,0 +1,127 @@
+:root {
+  --max-page-width: 1000px;
+  --background-color: #323334;
+  --background-lighter: #b2b3b53a;
+  --accent-color: #5ACDB4;
+  --accent-contrast: #CD5A73;
+  --text-color: #E4E4E5;
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  max-width: var(--max-page-width);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--accent-color);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.header-image {
+  width: min(100%, var(--max-page-width));
+  height: 150px; 
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 10px;
+  border: none;
+}
+
+.header-links {
+  display: flex;
+  width: 100%;
+  margin: 0px; 
+}
+
+.header-link-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2ch;
+  font-size: 1.25rem;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover {
+  filter: brightness(.75);
+}
+a:visited {
+  color: var(--accent-contrast);
+}
+
+.project-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-item {
+  width: 300px;
+  min-height: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--background-lighter);
+}
+
+.preview-image {
+  height: 150px;
+  width: 300px;
+  background-color:var(--accent-color);
+  border: 0px;
+  border-radius: 5px;
+}
+
+.section-break {
+  height: 1px;
+  width: 100%;
+  background-color: #5ACDB4;
+}
+
+.contact-section {
+  width: 100%;
+}
+
+.contact-form {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1rem;
+}
+
+.contact-form > label {
+  display: flex;
+  flex-direction: column;
+}
