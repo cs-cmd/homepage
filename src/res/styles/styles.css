@@ -1,6 +1,8 @@
+@import url('/src/res/fonts/css/urbanist.css');
+
 :root {
-  --max-page-width: 1000px;
-  --background-color: #323334;
+  --background-color: #021710;
+  --background-color-tp: #021710bb;
   --background-lighter: #b2b3b53a;
   --accent-color: #5ACDB4;
   --accent-contrast: #CD5A73;
@@ -14,42 +16,55 @@ html {
 }
 
 body {
-  max-width: var(--max-page-width);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Urbanist', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  margin: 0px;
 }
 
 .page-header {
   display: flex;
-  flex-direction: column;
+  background-color: var(--background-color-tp);
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid var(--accent-color);
-  padding: 5px;
-  border-radius: 10px;
+  height: 100px;
+  position: sticky;
+  top: 0px;
+  transform: translateY(0px);
+  transition: transform .25s;
+  padding: 1rem;
 }
 
-.header-image {
-  width: min(100%, var(--max-page-width));
-  height: 150px; 
-  background-repeat: no-repeat;
-  object-fit: cover;
-  object-position: bottom;
-  border-radius: 10px;
-  border: none;
+.page-header.is-minimized {
+  transform: translateY(-100px);
+}
+
+.name-title {
+  text-align: center;
 }
 
 .header-links {
   display: flex;
-  width: 100%;
   margin: 0px; 
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.nav-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown {
+  display: none;
 }
 
 .header-link-item {
   flex: 1;
   display: flex;
   justify-content: center;
-  padding: 2ch;
+  align-items: center;
   font-size: 1.25rem;
 }
 
@@ -71,9 +86,7 @@ a {
   color: var(--accent-color);
   text-decoration: none;
 }
-a:hover {
-  filter: brightness(.75);
-}
+
 a:visited {
   color: var(--accent-contrast);
 }
@@ -124,4 +137,25 @@ a:visited {
 .contact-form > label {
   display: flex;
   flex-direction: column;
+}
+
+
+@media (max-width: 475px) {
+  .header-links {
+    display: none;
+  } 
+  .name-title {
+    width: 100%;
+    text-align: center;
+  } 
+  .dropdown {
+    display: block;
+  }
+  .name-title::before,
+  .name-title::after {
+    content: ' ';
+    background-color: white;
+    height: 1px;
+    width: 100%;
+  } 
 }

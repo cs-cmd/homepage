@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Urbanist';
+  src: url('../src-files/Urbanist/Urbanist-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  src: url('../src-files/Urbanist/Urbanist-Italic-VariableFont_wght.ttf');
+  font-style: italic;
+}
