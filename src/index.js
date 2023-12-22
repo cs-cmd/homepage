@@ -35,14 +35,14 @@ linkItems.forEach(element => {
 
 const mobileMenuDropdown = document.querySelector('.dropdown-button');
 const mobileMenu = document.querySelector('.nav-section');
-
+const mobileDropdownImage = document.querySelector('#menu-icon');
 mobileMenuDropdown.addEventListener('click', () => {
 
   // if the menu is already dropped
-  if(mobileMenu.classList.contains('is-dropped')) {
-    // turn = into X
+  if(mobileMenu.classList.contains('is-displayed')) {
+    mobileDropdownImage.src = './src/res/icons/menu.svg';
   } else {
-    // turn X into =
+    mobileDropdownImage.src = './src/res/icons/x.svg'
   }
 
   mobileMenu.classList.toggle('is-displayed');
@@ -54,3 +54,4 @@ document.addEventListener('scroll', () => {
   }
   scrollHideHeader()
 });
+
