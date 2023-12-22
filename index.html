@@ -10,12 +10,27 @@
 <body>
   <header class="page-header" id="page-header">
     <h1 class="name-title">Ray O'Neill</h1>
+    <button class="dropdown-button">+</button>
     <nav class="nav-section">
-      <div class="dropdown">+</div>
       <ul class="header-links">
-        <li class='header-link-item'><a href='#about'>About</a></li>
-        <li class='header-link-item'><a href='#experience'>Experience</a></li>
-        <li class='header-link-item'><a href='#contact'>Contact</a></li>
+        <li class='header-link-item'>
+          <a href='#about'>
+            About
+            <div class="bottom-border"></div>
+          </a>
+        </li>
+        <li class='header-link-item'>
+          <a href='#experience'>
+            Experience
+            <div class="bottom-border"></div>
+          </a>
+        </li>
+        <li class='header-link-item'>
+          <a href='#contact'>
+            Contact            
+            <div class="bottom-border"></div>
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -43,19 +58,19 @@
           <p>This project, for me, was fairly straight-forward to implement with the use of React.</p>
         </li>
         <li class="card-item">
-          <img class="preview-image" alt="cv-creator-preview" src="./src/images/odin-cv-screenshot.png"/>
+          <img class="preview-image" alt="cv-creator-preview" src="./src/res/images/odin-cv-screenshot.png"/>
           <h3><a href="https://github.com/cs-cmd/odin-cv">Resume Creator</a></h3>
           <p>Built using React.</p>
           <p>A resume creator built with React. My first foray into the React world, so the features are slim.</p>
         </li>
         <li class="card-item">
-          <img alt="battleship-preview-image" class="preview-image" src="./src/images/battleship-screenshot.png"/>
+          <img alt="battleship-preview-image" class="preview-image" src="./src/res/images/battleship-screenshot.png"/>
           <h3><a href="https://github.com/cs-cmd/battleship">Battleship</a></h3>
           <p>Built using vanilla HTML, CSS, and JS, this project simulates the classic game, Battleship.</p>
           <p>A feature I'm most proud of in this project is the ship placement preview.</p>          
         </li>
         <li class="card-item">
-          <img alt="city-cube-restaurant-preview" class="preview-image" src="./src/images/citycube-ss.png"/>
+          <img alt="city-cube-restaurant-preview" class="preview-image" src="./src/res/images/citycube-ss.png"/>
           <h3><a href="https://github.com/cs-cmd/city-cube-restaurant">CityCube Restaurant</a></h3>
           <p>A fictional chain restaurant set in an dystopian future.</p>
           <p>An interesting feature I chose to implement is the caching of the web page tabs; it's not too feasible, in my opinion, for larger projects, but it was a journey into experimenting for me.</p>
@@ -77,19 +92,17 @@
       <form action="#" method="post" class="contact-form">
         <label>
           Name
-          <input type="text" required/>
+          <input type="text" name='contact_name'required/>
         </label>
 
         <label>
           Email
-          <input type="email" required/>
+          <input type="email" name='contact_email' required/>
         </label>
 
         <label>
           Message
-          <textarea>
-
-          </textarea>
+          <textarea name="contact_message" class="contact-message"></textarea>
         </label>
 
       </form>
@@ -97,10 +110,11 @@
   </main>
 
 
-  <!-- <div class="section-break"></div>
+  <div class="section-break"></div>
   
-  <footer>
-    <p1>Made from scratch with love :)</p1>
-  </footer> -->
+  <footer class="page-footer">
+    <p1>Made from scratch with love &#128153;</p1>
+    <a href="https://github.com/cs-cmd/homepage" target="_blank">&lt;/&gt;</a>
+  </footer>
 </body>
 </html>

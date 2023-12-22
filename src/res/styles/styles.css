@@ -1,5 +1,6 @@
 @import url('/src/res/fonts/css/urbanist.css');
 
+/* General page styles */
 :root {
   --background-color: #021710;
   --background-color-tp: #021710bb;
@@ -19,15 +20,23 @@ body {
   font-family: 'Urbanist', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
-  margin: 0px;
+  font-size: 1.125rem;
 }
 
+.section-break {
+  height: 1px;
+  width: 100%;
+  background-color: #5ACDB4;
+}
+
+
+/* Header styles */
 .page-header {
   display: flex;
   background-color: var(--background-color-tp);
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  min-height: 100px;
   position: sticky;
   top: 0px;
   transform: translateY(0px);
@@ -36,7 +45,7 @@ body {
 }
 
 .page-header.is-minimized {
-  transform: translateY(-100px);
+  transform: translateY(-200px);
 }
 
 .name-title {
@@ -56,7 +65,7 @@ body {
   align-items: center;
 }
 
-.dropdown {
+.dropdown-button {
   display: none;
 }
 
@@ -64,6 +73,7 @@ body {
   flex: 1;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   font-size: 1.25rem;
 }
@@ -91,6 +101,20 @@ a:visited {
   color: var(--accent-contrast);
 }
 
+.bottom-border {
+  height: 2px;
+  width: 0px; 
+  background-color: var(--accent-color);
+  transition: width .25s;
+}
+
+.bottom-border.is-hovered {
+  width: 100%;
+}
+
+
+
+/* Project display styles */
 .project-cards {
   display: flex;
   flex-direction: row;
@@ -115,14 +139,11 @@ a:visited {
   border-radius: 5px;
 }
 
-.section-break {
-  height: 1px;
-  width: 100%;
-  background-color: #5ACDB4;
-}
 
+/* Contact styles */
 .contact-section {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .contact-form {
@@ -139,23 +160,63 @@ a:visited {
   flex-direction: column;
 }
 
+.contact-message {
+  resize: none;
+  height: 10ch;
+}
 
+
+/* Footer styles */
+.page-footer {
+  margin: 1rem 0rem;
+  text-align: center;
+}
+
+
+
+/* Mobile styles */
 @media (max-width: 475px) {
-  .header-links {
-    display: none;
-  } 
-  .name-title {
-    width: 100%;
-    text-align: center;
-  } 
-  .dropdown {
-    display: block;
+
+
+  .page-header {
+    filter: brightness(100%);
+    height: 100px;
+    overflow: show;
   }
-  .name-title::before,
-  .name-title::after {
-    content: ' ';
-    background-color: white;
-    height: 1px;
-    width: 100%;
+
+  .header-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .nav-section {
+      transform: translate(125%, 40%);
+      transition: transform .25s,
+        background-color .25s;
+        width: 100%;
+  }
+
+  .nav-section.is-displayed {
+    transform: translate(10%, 40%);
+    background-color: var(--background-color);
+  }
+
+
+
+  .header-link-item {
+    font-size: 2rem;
+  }
+
+  .name-title {
+    display: none;
+    /* width: 100%;
+    text-align: center; */
   } 
+
+  .dropdown-button {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+  }
 }
